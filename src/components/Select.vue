@@ -7,7 +7,8 @@
     <div v-if="visible">
       <ul>
         <li
-            v-for="(option, index) of filteredOptions" :key="index">
+            v-for="(option, index) of filteredOptions" :key="index"
+        >
           <input v-model="selected" :id="index" :type="multiple ? 'checkbox' : 'radio'" :value="option.id">
           <label :for="index">{{ option.name }}</label>
         </li>
