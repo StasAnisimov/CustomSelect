@@ -1,17 +1,37 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <span>{{ selected }}</span>
+    <Select :options="options" v-model="selected" multiple/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Select from './components/Select.vue'
 
 export default {
   name: 'App',
+  data() {
+    return {
+      selected: null,
+      options: [
+        {
+          id: 1,
+          name: 'Test',
+        },
+        {
+          id: 2,
+          name: 'Test1',
+        },
+        {
+          id: 3,
+          name: 'Test2',
+        },
+      ]
+    }
+  },
+
   components: {
-    HelloWorld
+    Select
   }
 }
 </script>
